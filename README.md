@@ -1,38 +1,107 @@
-# Home AD-Lab
+# 🧪 Home AD Lab
 
-## Objective
+## 🎯 Objective
 
-The Home AD Lab project aims to build a comprehensive home lab environment using VirtualBox that simulates a Windows Active Directory, explores how a domain environment works, ingests events using Splunk, and uses Kali Linux and Atomic Red Team to simulate adversary tactics. This project helps build your home lab environment where you can gain hands-on experience in blue team (defensive) and red team (offensive) operations and support testing detection capabilities in a controlled, realistic setting.
+The **Home AD Lab** project builds a comprehensive virtual lab environment using **VirtualBox**, simulating a Windows Active Directory (AD) domain. It explores domain operations, event forwarding to **Splunk**, and adversary simulation using **Kali Linux** and **Atomic Red Team**.
 
-### Skills Learned
+This project is designed to provide **hands-on experience** with both **blue team (defensive)** and **red team (offensive)** operations — all within a controlled and realistic environment.
 
-- Installing, configuring, and managing domain controllers
+---
+
+## 🧠 Skills Learned
+
+- Installing, configuring, and managing Active Directory domain controllers
 - Creating and managing user accounts, groups, and organizational units (OUs)
 - Forwarding Windows event logs to Splunk
-- Using Atomic Red Team to simulate real-world attacks
-- Analyzing attack techniques and detection using Splunk
-- Development of critical thinking and problem-solving skills in cybersecurity.
+- Simulating real-world attacks with Atomic Red Team
+- Analyzing attack techniques and developing detections in Splunk
 - Practicing password attacks and exploiting misconfigurations
-- Coordinating the interaction between multiple tools and systems in a single lab
+- Coordinating multiple tools in a fully integrated lab environment
+- Developing critical thinking and cybersecurity problem-solving skills
 
-### Tools Used
+---
 
-- Splunk for log ingestion and analysis.
-- Virtualbox for creating and running virtual machines.
-- Ubuntu Server is used to host our Splunk server
-- Windows 10 Virtual Machine
-- Windows server 2022 Virtual Machine for Active Directory/Domain Controller
-- Kali linux is used as our attacker
-- atomic red to simulate adversary behavior
-- sysmon to provided advance system activity logging 
-- app.diagrams.net to build logical diagram 
-## Steps
+## 🛠️ Tools Used
 
-### 1. Create a logical Diagram and Mapping out lab
-Below is the logical diagram that I used for my lab.
-
-*Ref 1: logical Diagram*
-
-<img width="652" height="617" alt="image" src="https://github.com/user-attachments/assets/fe34b4d1-6d81-456d-b1e4-ec71f38580fe" />
+| Tool                  | Purpose                                                   |
+|-----------------------|-----------------------------------------------------------|
+| **VirtualBox**         | Virtualization platform for running lab machines         |
+| **Windows Server 2022** | Active Directory Domain Controller; runs Sysmon         |
+| **Windows 10**         | Domain-joined workstation; runs Sysmon + Atomic Red Team |
+| **Ubuntu Server**      | Hosts the Splunk server                                  |
+| **Splunk**             | Log ingestion, search, and analysis                       |
+| **Sysmon**             | System activity logging on both Windows machines         |
+| **Splunk Universal Forwarder** | Forwards logs to Splunk from Windows machines     |
+| **Atomic Red Team**    | Simulates adversary behavior (on Windows 10)             |
+| **Kali Linux**         | Attacker machine used for password brute-force testing   |
+| **Crowbar**            | Brute-force tool used on Kali to attack domain accounts  |
+| **draw.io**            | Logical diagram creation                                 |
 
 
+---
+
+## 🗺️ Lab Mapping & Logical Diagram
+
+Below is the logical diagram created via **draw.io** and used to plan and map the lab environment.
+
+> 📌 *Ref 1: Logical Diagram*
+
+<img width="652" height="617" alt="Lab Diagram" src="https://github.com/user-attachments/assets/fe34b4d1-6d81-456d-b1e4-ec71f38580fe" />
+
+---
+
+## 🧩 Lab Components Overview
+
+1. **Windows Server 2022**
+   - Acts as the Domain Controller (AD, DNS, DHCP)
+   - Sysmon installed for detailed event logging
+   - Logs forwarded to Splunk via Universal Forwarder
+
+2. **Windows 10**
+   - Joined to the AD domain
+   - Runs Sysmon and Atomic Red Team
+   - Logs forwarded to Splunk via Universal Forwarder
+
+3. **Ubuntu Server**
+   - Hosts Splunk Enterprise (free license)
+   - Ingests logs from both Windows machines for analysis
+
+4. **Kali Linux**
+   - Used for red team simulation
+   - Ran **Crowbar** to perform brute-force attacks against domain user accounts
+   - Helped test Splunk detection rules for failed logins and password spraying
+
+---
+
+## 🔬 Use Cases
+
+- Practice detection engineering with Splunk and Sysmon logs
+- Analyze attack behaviors and build queries for detection
+- Test GPO enforcement and Active Directory misconfigurations
+- Simulate red team TTPs with Atomic Red Team
+- Perform log correlation and build dashboards in Splunk
+- Simulate brute-force and password spraying attacks using Crowbar
+
+
+---
+
+## 📜 Disclaimer
+
+> ⚠️ This lab is intended for **educational and ethical purposes only**. Never perform offensive operations in environments you do not own or have explicit permission to test.
+
+---
+
+## 🙏 Acknowledgements
+
+- [MyDFIR YouTube Channel](https://www.youtube.com/@MyDFIR)
+- [Red Canary Atomic Red Team](https://github.com/redcanaryco/atomic-red-team)
+- [Splunk](https://www.splunk.com/)
+- [Microsoft Sysinternals (Sysmon)](https://learn.microsoft.com/en-us/sysinternals/)
+- [MITRE ATT&CK Framework](https://attack.mitre.org/)
+
+---
+
+## 👤 Author
+
+**Max Metellus / GitHub Handle**  
+[GitHub Profile](https://github.com/metellusmax/metellusmax)
