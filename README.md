@@ -25,13 +25,14 @@ The Home AD Lab project aims to build a comprehensive home lab environment using
 - Kali linux is used as our attacker
 - atomic red to simulate adversary behavior
 - sysmon to provided advance system activity logging 
-
+- app.diagrams.net to build logical diagram 
 ## Steps
 
 ### 1. Create a logical Diagram and Mapping out lab
+Below is the logical diagram that I used for my lab.
 
-Every screenshot should have some text explaining what the screenshot is about.
+*Ref 1: logical Diagram*
 
-Example below.
+<img width="652" height="617" alt="image" src="https://github.com/user-attachments/assets/fe34b4d1-6d81-456d-b1e4-ec71f38580fe" />
 
-*Ref 1: Network Diagram*
+
