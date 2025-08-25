@@ -23,26 +23,25 @@ This project is designed to provide **hands-on experience** with both **blue tea
 
 ## 🛠️ Tools Used
 
-| Tool                  | Purpose                                                   |
-|-----------------------|-----------------------------------------------------------|
-| **VirtualBox**         | Virtualization platform for running lab machines         |
-| **Windows Server 2022** | Active Directory Domain Controller; runs Sysmon         |
-| **Windows 10**         | Domain-joined workstation; runs Sysmon + Atomic Red Team |
-| **Ubuntu Server**      | Hosts the Splunk server                                  |
-| **Splunk**             | Log ingestion, search, and analysis                       |
-| **Sysmon**             | System activity logging on both Windows machines         |
-| **Splunk Universal Forwarder** | Forwards logs to Splunk from Windows machines     |
-| **Atomic Red Team**    | Simulates adversary behavior (on Windows 10)             |
-| **Kali Linux**         | Attacker machine used for password brute-force testing   |
-| **Crowbar**            | Brute-force tool used on Kali to attack domain accounts  |
-| **draw.io**            | Logical diagram creation                                 |
-
+| Tool                          | Purpose                                                   |
+|-------------------------------|-----------------------------------------------------------|
+| **VirtualBox**                | Virtualization platform for running lab machines         |
+| **Windows Server 2022**       | Active Directory Domain Controller; runs Sysmon          |
+| **Windows 10**                | Domain-joined workstation; runs Sysmon + Atomic Red Team |
+| **Ubuntu Server**             | Hosts the Splunk server                                  |
+| **Splunk**                    | Log ingestion, search, and analysis                      |
+| **Sysmon**                    | System activity logging on both Windows machines         |
+| **Splunk Universal Forwarder**| Forwards logs to Splunk from Windows machines            |
+| **Atomic Red Team**           | Simulates adversary behavior (on Windows 10)             |
+| **Kali Linux**                | Attacker machine used for password brute-force testing   |
+| **Crowbar**                   | Brute-force tool used on Kali to attack domain accounts  |
+| **draw.io**                   | Logical diagram creation                                 |
 
 ---
 
-## 🗺️ Lab Mapping & Logical Diagram
+## 🗺️ Lab Architecture & Diagram
 
-Below is the logical diagram created via **draw.io** and used to plan and map the lab environment.
+Below is the logical diagram created via **draw.io**, used to plan and map the lab environment.
 
 > 📌 *Ref 1: Logical Diagram*
 
@@ -68,20 +67,19 @@ Below is the logical diagram created via **draw.io** and used to plan and map th
 
 4. **Kali Linux**
    - Used for red team simulation
-   - Ran **Crowbar** to perform brute-force attacks against domain user accounts
-   - Helped test Splunk detection rules for failed logins and password spraying
+   - Uses **Crowbar** to perform brute-force attacks against domain user accounts
+   - Helps test Splunk detection rules for failed logins and password spraying
 
 ---
 
 ## 🔬 Use Cases
 
-- Practice detection engineering with Splunk and Sysmon logs
-- Analyze attack behaviors and build queries for detection
-- Test GPO enforcement and Active Directory misconfigurations
-- Simulate red team TTPs with Atomic Red Team
+- Practice detection engineering with Splunk and Sysmon logs  
+- Analyze attack behaviors and build queries for detection  
+- Test GPO enforcement and Active Directory misconfigurations  
+- Simulate red team TTPs with Atomic Red Team  
+- Simulate brute-force and password spraying attacks using Crowbar  
 - Perform log correlation and build dashboards in Splunk
-- Simulate brute-force and password spraying attacks using Crowbar
-
 
 ---
 
@@ -103,5 +101,5 @@ Below is the logical diagram created via **draw.io** and used to plan and map th
 
 ## 👤 Author
 
-**Max Metellus / GitHub Handle**  
-[GitHub Profile](https://github.com/metellusmax/metellusmax)
+**Max Metellus**  
+[GitHub: @metellusmax](https://github.com/metellusmax/metellusmax)
